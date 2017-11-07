@@ -209,11 +209,6 @@ namespace Grammophone.Serialization
 			stream.Write(bytes, 0, 2);
 		}
 
-		private void WriteDateTime(DateTime value)
-		{
-			WriteInt64(value.Ticks);
-		}
-
 		private void WriteDecimal(Decimal value)
 		{
 			var bits = Decimal.GetBits(value);
@@ -419,11 +414,6 @@ namespace Grammophone.Serialization
 					else if (type == typeof(Char))
 					{
 						WriteChar((Char)value);
-						return;
-					}
-					else if (type == typeof(DateTime))
-					{
-						WriteDateTime((DateTime)value);
 						return;
 					}
 					else if (type == typeof(Decimal))

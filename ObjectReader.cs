@@ -383,11 +383,6 @@ namespace Grammophone.Serialization
 					{
 						value = ReadChar();
 					}
-                    //NOTE(jrg): DateTime is going to handled by ISerializable
-					//else if (type == typeof(DateTime))
-					//{
-					//	value = ReadDateTime();
-					//}
 					else if (type == typeof(Decimal))
 					{
 						value = ReadDecimal();
